@@ -6,7 +6,7 @@ A simple HTTP server that implements RFC 2324 (Hyper Text Coffee Pot Control Pro
 
 This project provides multiple implementations:
 
-### Hono (Node.js/TypeScript/Bun/Deno)
+### TypeScript
 
 A modern implementation using [Hono](https://hono.dev/) web framework. Hono can run on Node.js, Bun, Deno, and edge environments.
 
@@ -81,4 +81,4 @@ java -jar build/libs/teapot-3.5.4-fat.jar
 
 ## Image Credit
 
-Teapot image by [Joni Ludlow](https://unsplash.com/@joni_ludlow) on [Unsplash](https://unsplash.com/photos/rqaSSf7N3rc). Licensed under the Unsplash License.
+Teapot image by [Joni Ludlow](https://unsplash.com/@joni_ludlow) on [Unsplash](https://unsplash.com/photos/white-blue-and-red-ceramic-teapot-pouring-water-on-white-ceramic-teacup-rqaSSf7N3rc). Licensed under the Unsplash License.
