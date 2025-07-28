@@ -1,18 +1,14 @@
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
+import type { Context } from 'hono'
 import * as fs from 'fs'
 import * as path from 'path'
 
 const app = new Hono()
 
 // Serve the teapot image with HTTP 418 status
-const teapotHandler = async (c: any) => {
+const teapotHandler = async (c: Context) => {
   const imagePath = path.join(process.cwd(), 'joni-ludlow-rqaSSf7N3rc-unsplash.jpg')
-  
-  if (!fs.existsSync(imagePath)) {
-    return c.text('Teapot image not found', 404)
-  }
-
   const imageBuffer = fs.readFileSync(imagePath)
   
   return c.body(imageBuffer, 418, {
@@ -21,7 +17,7 @@ const teapotHandler = async (c: any) => {
 }
 
 // Health check endpoint
-const healthHandler = (c: any) => {
+const healthHandler = (c: Context) => {
   return c.json({ status: 'ok' })
 }
 
@@ -30,7 +26,7 @@ app.get('/', teapotHandler)
 app.get('/teapot', teapotHandler)  
 app.get('/health', healthHandler)
 
-const port = process.env.PORT ? parseInt(process.env.PORT) : 8000
+const port = 8000
 
 console.log(`Server is running on port ${port}`)
 

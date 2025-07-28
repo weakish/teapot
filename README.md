@@ -6,35 +6,56 @@ A simple HTTP server that implements RFC 2324 (Hyper Text Coffee Pot Control Pro
 
 This project provides multiple implementations:
 
-### Hono (Node.js/TypeScript) - Main Implementation
+### Hono (Node.js/TypeScript/Bun/Deno)
 
-A modern implementation using [Hono](https://hono.dev/) web framework.
+A modern implementation using [Hono](https://hono.dev/) web framework. Hono can run on Node.js, Bun, Deno, and edge environments.
 
 **Requirements:**
-- Node.js 18+
-- npm
+- Node.js 18+ / Bun / Deno
 
 **Setup and Run:**
-```bash
+
+With npm:
+```sh
 npm install
 npm run dev
 ```
 
+With pnpm:
+```sh
+pnpm install
+pnpm run dev
+```
+
+With Bun:
+```sh
+bun install
+bun run src/index.ts
+```
+
+With Deno:
+```sh
+deno run --allow-net --allow-read src/index.ts
+```
+
+For Netlify Edge Functions, deploy the `src/index.ts` file as an edge function.
+
 **Endpoints:**
 - `GET /` - Returns HTTP 418 with teapot image
 - `GET /teapot` - Returns HTTP 418 with teapot image  
-- `GET /health` - Returns `{"status": "ok"}`
+- `GET /health` - Returns HTTP 200 with `{"status": "ok"}`
 
 ### Python (Starlette)
 
-Legacy implementation using Starlette framework.
+Alternative implementation using Starlette framework.
 
 **Requirements:**
 - Python 3.7+
 - pip
 
 **Setup and Run:**
-```bash
+```sh
+cd python
 pip install -r requirements.txt
 python -m uvicorn teapot:app --host 0.0.0.0 --port 8000
 ```
@@ -48,7 +69,7 @@ Alternative implementation using Vert.x framework.
 - Gradle
 
 **Setup and Run:**
-```bash
+```sh
 cd vert.x
 ./gradlew shadowJar
 java -jar build/libs/teapot-3.5.4-fat.jar
@@ -56,8 +77,8 @@ java -jar build/libs/teapot-3.5.4-fat.jar
 
 ## License
 
-See LICENSE file.
+0BSD (BSD Zero Clause License)
 
 ## Image Credit
 
-Teapot image by Joni Ludlow on Unsplash.
+Teapot image by [Joni Ludlow](https://unsplash.com/@joni_ludlow) on [Unsplash](https://unsplash.com/photos/rqaSSf7N3rc). Licensed under the Unsplash License.
