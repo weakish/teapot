@@ -8,23 +8,23 @@ This project provides multiple implementations:
 
 ### TypeScript (Hono)
 
-A modern implementation using [Hono](https://hono.dev/) web framework, designed to run on Netlify Edge Functions.
+A modern implementation using [Hono](https://hono.dev/) web framework, designed specifically for Netlify Edge Functions deployment.
 
-**Deployment:**
+**Netlify Deployment:**
 
-Deploy to Netlify by connecting your repository. The application will automatically run as a Netlify Edge Function using the `src/teapot.ts` file.
+Deploy to Netlify by connecting your repository. The application will automatically run as a Netlify Edge Function using the `src/teapot.ts` file. No build step required.
 
 **Local Development:**
 
-With Bun:
+For local development, you can use Deno (recommended for Edge Functions compatibility):
+```sh
+deno run --allow-net --allow-read src/teapot.ts
+```
+
+Or with Bun:
 ```sh
 bun install
 bun run src/teapot.ts
-```
-
-With Deno:
-```sh
-deno run --allow-net --allow-read src/teapot.ts
 ```
 
 **Endpoints:**
