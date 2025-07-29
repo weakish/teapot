@@ -1,0 +1,10 @@
+[build]
+  command = "echo 'No build required'"
+  publish = "."
+
+[[edge_functions]]
+  path = "/*"
+  function = "teapot"
+
+[edge_functions]
+  directory = "src"

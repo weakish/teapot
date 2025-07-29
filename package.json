@@ -1,23 +1,20 @@
 {
   "name": "teapot",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/teapot.ts",
   "type": "module",
   "scripts": {
-    "dev": "tsx src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
+    "dev": "bun run src/teapot.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["teapot", "http", "rfc2324", "418", "hono", "web-server"],
+  "keywords": ["teapot", "http", "rfc2324", "418", "hono", "web-server", "netlify", "edge-functions"],
   "author": "weakish",
   "license": "0BSD",
   "description": "A simple HTTP server that implements RFC 2324 by returning HTTP 418 'I'm a teapot' status code",
   "dependencies": {
-    "@hono/node-server": "^1.17.1",
-    "@types/node": "^24.1.0",
-    "hono": "^4.8.9",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "hono": "^4.8.9"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0"
   }
 }
