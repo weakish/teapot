@@ -6,7 +6,7 @@ A simple HTTP server that implements RFC 2324 (Hyper Text Coffee Pot Control Pro
 
 This project provides multiple implementations:
 
-### TypeScript
+### TypeScript (Hono)
 
 A modern implementation using [Hono](https://hono.dev/) web framework. Hono can run on Node.js, Bun, Deno, and edge environments.
 

@@ -6,7 +6,7 @@ from starlette.responses import FileResponse, JSONResponse
 async def teapot(request):
     _ = request
     return FileResponse(status_code=HTTPStatus.IM_A_TEAPOT,
-            path="images/joni-ludlow-rqaSSf7N3rc-unsplash.jpg")
+            path="../images/joni-ludlow-rqaSSf7N3rc-unsplash.jpg")
 
 async def health(request):
     _ = request
